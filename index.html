@@ -6,17 +6,47 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Test Web Cam</title>
     
+    <style>
+        #areaWebCam{
+            width: 200px;
+            height: 200px;
+            border: solid 6px blue;
+            border-radius: 15px;
+            margin-bottom:10px;
+        }
+        
+        #canvas{
+            border:1px solid;
+            width: 300px;
+            height: 300px;
+            margin-top: 10px;
+        }
+        
+        #snap{
+            border-radius: 5px;
+            border:solid 1px ;
+            background-color:chartreuse;
+            color:#FFF;
+            text-shadow: 1px 2px #000;
+            width:100px;
+            height:30px;
+            font-size: 10pt
+        }
+    
+    </style>
+    
 </head>
 <body>
-    <div class="video-wrap" width='640' height='480'>
-        <video id="video" playsinline autoplay controls></video>
+    <div class="video-wrap" id="areaWebCam">
+        <video id="video" playsinline autoplay></video>
     </div>
 
     <div class="controller">
-        <button id="snap">capture</button>
+        <button id="shot">capture</button>
+        <a href="#" id="saveImage" download='MiImagen.jpg' type="button" onclick="downloadImage(this)">Save Image</button>
     </div>
 
-    <canvas id="canvas" width="640" height="480"></canvas>
+    <canvas id="canvas" ></canvas>
 
     <script src="controller.js"></script>
 </body>
